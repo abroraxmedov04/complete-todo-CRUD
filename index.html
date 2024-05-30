@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <title>TODO-page</title>
+</head>
+
+<body class="bg-[#0D0714]">
+  <header class="py-[20px] bg-[#1D1825] mb-[40px]">
+    <div class="container mx-auto flex items-center justify-between" style="width: 1200px">
+      <button class="logout-btn text-white bg-[#9E78CF] py-[5px] px-[22px] rounded-md font-bold text-[20px]">
+        log out
+      </button>
+
+      <h1 class="text-white font-bold text-[32px]">Advanced Todo tracker</h1>
+    </div>
+  </header>
+  <main class="flex justify-center items-center">
+    <section class="py-[55px] px-[65px] bg-[#1D1825] rounded-md max-w-[583px] w-full">
+      <h1 class="text-[32px] font-bold text-white mb-[32px] relative">
+        Todo-list tracker
+        <img src="./images/todo-icon-logo.png" alt="Image" class="absolute right-[35%] top-[10px] h-8 w-8" />
+      </h1>
+      <form method="POST" class="todo-form flex gap-[11px] items-center mb-[59px]">
+        <input type="text"
+          class="todo-input py-[5px] px-[15px] w-full block bg-transparent border-[2px] border-[#9E78CF] rounded-md outline-none text-white"
+          placeholder="Add a new task" aria-label="Add a new task" name="todo_task " />
+
+        <button type="submit" class="bg-[#9E78CF] rounded-md p-[18px] w-[38px] h-[38px]" style="
+              background-image: url('./images/Plus.svg');
+              background-repeat: no-repeat;
+              background-position: center;
+            "></button>
+      </form>
+
+      <div class="flex items-center justify-between mb-[17px]">
+        <p class="text-white">
+          Tasks to do :
+          <span class="task-counter text-[#9E78CF] font-bold text-xl"></span>
+        </p>
+
+        <h3 class="category text-white font-bold">All tasks</h3>
+      </div>
+
+      <button
+        class="btn-toggle-tasks block mx-auto text-white py-[10px] w-full bg-[#9E78CF] rounded-md mb-[32px] text-xl font-bold hover:bg-[#954ded] transition-all duration-1000">
+        completed
+      </button>
+
+      <ul class="todo-list flex flex-col gap-[15px] h-[300px] overflow-x-auto overflow-visible"></ul>
+    </section>
+  </main>
+
+  <template class="todo-task-template">
+    <li
+      class="task-item-li bg-[#15101C] text-[#9E78CF] flex items-center justify-between py-[22px] px-[22px] rounded-md">
+      <p class="todo-value py-[2px] w-[300px] px-[10px]">
+        To study React fundamentals
+      </p>
+
+      <div class="flex items-center gap-[12px]">
+        <button class="complete-btn bg-transparent rounded-md p-[3px] w-[22px] h-[22px]" style="
+              background-image: url('./images/Check.svg');
+              background-repeat: no-repeat;
+              background-position: center;
+            "></button>
+        <button class="edit-btn bg-transparent rounded-md p-[3px] w-[22px] h-[22px]" style="
+              background-image: url('./images/edit-button-svgrepo-com.svg');
+              background-repeat: no-repeat;
+              background-position: center;
+            "></button>
+        <button class="delete-btn bg-transparent rounded-md p-[3px] w-[22px] h-[22px]" style="
+              background-image: url('./images/TrashSimple.svg');
+              background-repeat: no-repeat;
+              background-position: center;
+            "></button>
+      </div>
+    </li>
+  </template>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

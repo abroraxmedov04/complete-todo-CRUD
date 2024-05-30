@@ -1,0 +1,16 @@
+/* poppins-regular - latin */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+.todo-list::-webkit-scrollbar {
+  width: 4px;
+  padding-left: 20px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
