@@ -10,6 +10,7 @@ const userPhone = document.querySelector(".js-user-phone-number");
 const userEmail = document.querySelector(".js-user-email");
 const userPassword = document.querySelector(".js-user-password");
 const showPassword = document.querySelector(".show-password");
+const LOCALHOST = "192.168.1.104";
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -24,7 +25,7 @@ async function userRegister() {
       email: userEmail.value.trim(),
       password: userPassword.value,
     };
-    let response = await fetch("http://192.168.1.105:5000/user/register", {
+    let response = await fetch(`http://${LOCALHOST}:5000/user/register`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

@@ -8,6 +8,7 @@ const form = document.querySelector(".js-user-login-form");
 const userEmail = document.querySelector(".js-login-email");
 const userPassword = document.querySelector(".js-login-password");
 const showPassword = document.querySelector(".show-password");
+const LOCALHOST = "192.168.1.104";
 
 async function userLogin() {
   try {
@@ -15,7 +16,7 @@ async function userLogin() {
       email: userEmail.value.trim(),
       password: userPassword.value,
     };
-    let response = await fetch("http://192.168.1.105:5000/user/login", {
+    let response = await fetch(`http://${LOCALHOST}:5000/user/login`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

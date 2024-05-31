@@ -14,6 +14,7 @@ const taskCounter = document.querySelector(".task-counter");
 const logoutBtn = document.querySelector(".logout-btn");
 const toggleBtn = document.querySelector(".btn-toggle-tasks");
 const category = document.querySelector(".category");
+const LOCALHOST = "192.168.1.104";
 
 let todos = [];
 
@@ -40,7 +41,7 @@ function renderTodo() {
 
 async function fetchTodos() {
   try {
-    let response = await fetch("http://192.168.1.105:5000/todo", {
+    let response = await fetch(`http://${LOCALHOST}:5000/todo`, {
       headers: {
         Authorization: token,
       },
@@ -55,7 +56,7 @@ async function fetchTodos() {
 
 async function postTodo() {
   try {
-    let response = await fetch("http://192.168.1.105:5000/todo", {
+    let response = await fetch(`http://${LOCALHOST}:5000/todo`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +76,7 @@ async function postTodo() {
 
 async function deleteTask(id) {
   try {
-    let response = await fetch(`http://192.168.1.105:5000/todo/${id}`, {
+    let response = await fetch(`http://${LOCALHOST}:5000/todo/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: token,
@@ -90,7 +91,7 @@ async function deleteTask(id) {
 
 async function editTask(id, editElement) {
   try {
-    let response = await fetch(`http://192.168.1.105:5000/todo/${id}`, {
+    let response = await fetch(`http://${LOCALHOST}:5000/todo/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -110,7 +111,7 @@ async function editTask(id, editElement) {
 async function completeTask(id, btn) {
   try {
     btn.disabled = true;
-    let response = await fetch(`http://192.168.1.105:5000/todo/edit/${id}`, {
+    let response = await fetch(`http://${LOCALHOST}:5000/todo/edit/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
